@@ -1,10 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"strconv"
-	"strings"
-)
+import "fmt"
 
 /*
 func init() {
@@ -99,6 +95,7 @@ func main() {
 
 	// fmt.Println(big - 1)
 
+	/*
 	var (
 		u8  uint8     = 255
 		i8  int8 	  = 127
@@ -169,4 +166,67 @@ func main() {
 	var str string = "14"
 	i, _ := strconv.Atoi(str)
 	fmt.Printf("%T %v", i ,i)
+	*/
+
+	var a [2]int
+	a[0] = 100
+	a[1] = 200
+	fmt.Println(a)
+
+	b := [2]int{300, 400}
+	b[1] = 500
+	fmt.Println(b)
+	fmt.Println(b[0])
+
+	n := []int{1, 2, 3, 4, 5}
+	n[1] = 100
+	fmt.Println(n)
+	fmt.Println(n[4])
+	fmt.Println(n[2:4])
+	fmt.Println(n[:2])
+	fmt.Println(n[2:])
+	fmt.Println(n[:])
+
+	n = append(n, 200)
+	fmt.Println(n)
+	n = append(n, 200, 300, 400)
+	fmt.Println(n)
+
+	var board = [][]int{
+		[]int{0, 1, 2},
+		[]int{3, 4, 5},
+		[]int{6, 7, 8},
+	}
+	fmt.Println(board)
+	fmt.Println(board[0])
+	fmt.Println(board[0][2])
+
+	m := make([]int, 3, 5)
+	fmt.Printf("len=%d cap=%d value=%v\n", len(m), cap(m) ,m)
+	m = append(m, 1, 2, 3)
+	fmt.Printf("len=%d cap=%d value=%v\n", len(m), cap(m) ,m)
+
+	c := make([]int, 4)
+	fmt.Printf("len=%d cap=%d value=%v\n", len(c), cap(c), c)
+
+	d := []byte{72, 73}
+	fmt.Println(d)
+	fmt.Println((string(d)))
+
+	e := []byte("HI")
+	fmt.Println(e)
+	fmt.Println((string(e)))
+
+	ma := map[string]int{"apple": 100, "banana": 200}
+	fmt.Println(ma)
+	fmt.Println(ma["apple"])
+	ma["banana"] = 300
+	fmt.Println(ma)
+	ma["orange"] = 500
+	fmt.Println(ma)
+	fmt.Println(ma["mikan"])
+	v, ok := ma["apple"]
+	fmt.Println(v, ok)
+	v2, ok2 := ma["mikan"]
+	fmt.Println(v2, ok2)
 }
