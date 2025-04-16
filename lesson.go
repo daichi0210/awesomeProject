@@ -39,7 +39,76 @@ const (
 const big = 9223372036854775807 + 1
 */
 
+func add(x, y int) (int, int) {
+	return x + y, x - y
+}
+
+func cal(price, item int) (result int, tax float64) {
+	tax = 1.1
+	result = int(float64(price*item) * tax)
+	return result, tax
+}
+
+func incrementGenerator() func() int {
+	x := 0
+	return func() int {
+		x++
+		return x
+	}
+}
+
+func foo(params ...int) {
+	fmt.Println(len(params), params)
+	for _, param := range params {
+		fmt.Println(param)
+	}
+}
+
 func main() {
+	// foo(10, 20)
+	// foo(10, 20, 30)
+	s := []int{1, 2, 3}
+	fmt.Println(s)
+	foo(s...)
+
+
+	/*
+	counter := incrementGenerator()
+	fmt.Println(counter())
+	fmt.Println(counter())
+	fmt.Println(counter())
+	*/
+
+	/*
+	x := 0
+	increment := func() int {
+		x++
+		return x
+	}
+	fmt.Println(increment())
+	fmt.Println(increment())
+	fmt.Println(increment())
+	*/
+
+	/*
+	r,t := cal(100, 2)
+	fmt.Println(r, t)
+
+	f := func(x int) {
+		fmt.Println("inner func", x)
+	}
+	f(1)
+	
+	func(x int) {
+		fmt.Println("inner func", x)
+	}(2)
+	*/
+
+	/*
+	r1, r2 := add(10, 20)
+	fmt.Println(r1, r2)
+	*/
+
 	//bazz()
 
 	/*
@@ -168,6 +237,7 @@ func main() {
 	fmt.Printf("%T %v", i ,i)
 	*/
 
+	/*
 	var a [2]int
 	a[0] = 100
 	a[1] = 200
@@ -229,4 +299,5 @@ func main() {
 	fmt.Println(v, ok)
 	v2, ok2 := ma["mikan"]
 	fmt.Println(v2, ok2)
+	*/
 }
