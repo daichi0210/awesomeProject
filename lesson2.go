@@ -48,6 +48,17 @@ func main() {
 	for _, v := range m {
 		fmt.Println(v)
 	}
+
+	os := "mac"
+	switch os {
+	case "mac":
+		fmt.Println("Mac")
+	case "windows":
+		fmt.Println("Windows")
+	default:
+		fmt.Println("Default")
+	}
+
 	/*
 	num := 9
 	if num%2 == 0 {
